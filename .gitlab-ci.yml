@@ -12,7 +12,7 @@ build-frontend:
     - echo "Rodando frontend"
   script:
     - cd frontend
-    - docker build -t frontend .
+    - docker build -t $CI_REGISTRY_IMAGE_FRONT .
     - echo "Subindo front"
     - docker push $CI_REGISTRY_IMAGE_FRONT
   after_script:
@@ -24,7 +24,7 @@ build-backend:
     - echo "Rodando backend"
   script:
     - cd backend
-    - docker build -t backend .
+    - docker build -t $CI_REGISTRY_IMAGE_BACK .
     - echo "subindo back"
     - docker push $CI_REGISTRY_IMAGE_BACK
   after_script:
