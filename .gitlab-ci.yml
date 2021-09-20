@@ -27,6 +27,7 @@ build-backend:
     - echo "Backend OK"    
 
 test-frontend:
+  image: docker/compose
   stage: test
   before_script:
     - echo "Rodando testes front"
@@ -36,6 +37,7 @@ test-frontend:
     - echo "Testes frontend OK"
     
 test-backend:
+  image: docker/compose
   stage: test
   before_script:
     - echo "Rodando testes back"
