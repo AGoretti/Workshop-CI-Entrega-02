@@ -25,3 +25,21 @@ build-backend:
     - docker build -t backend .
   after_script:
     - echo "Backend OK"    
+
+test-frontend:
+  stage: test
+  before_script:
+    - echo "Rodando testes front"
+  script:
+    - docker-compose run --entrypoint "npm run test" frontend
+  after_script:
+    - echo "Testes frontend OK"
+    
+test-backend:
+  stage: test
+  before_script:
+    - echo "Rodando testes back"
+  script:
+    - docker-compose run --entrypoint "npm run unittest" backend
+  after_script:
+    - echo "Testes backend OK"    
