@@ -13,6 +13,8 @@ build-frontend:
   script:
     - cd frontend
     - docker build -t frontend .
+    - echo "Subindo front"
+    - docker push "$CI_REGISTRY_IMAGE_FRONT"
   after_script:
     - echo "Frontend OK"
 
@@ -23,6 +25,8 @@ build-backend:
   script:
     - cd backend
     - docker build -t backend .
+    - echo "subindo back"
+    - docker push "$CI_REGISTRY_IMAGE_BACK"
   after_script:
     - echo "Backend OK"    
 
