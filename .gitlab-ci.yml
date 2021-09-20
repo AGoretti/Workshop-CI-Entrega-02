@@ -12,7 +12,7 @@ build-frontend:
     - echo "Rodando frontend"
   script:
     - cd frontend
-    - docker build -t frontend 
+    - docker build -t frontend .
   after_script:
     - echo "Frontend OK"
 
