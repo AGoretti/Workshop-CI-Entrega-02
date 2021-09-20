@@ -8,6 +8,20 @@ before_script:
 
 build-frontend:
   stage: build
+  before_script:
+    - echo "Rodando frontend"
   script:
     - cd frontend
-    - docker build -t frontend .
+    - docker build -t frontend 
+  after_script:
+    - echo "Frontend OK"
+
+build-backend:
+  stage: build
+  before_script:
+    - echo "Rodando backend"
+  script:
+    - cd backend
+    - docker build -t backend .
+  after_script:
+    - echo "Backend OK"    
